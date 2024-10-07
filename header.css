@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* layer1 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-menu {
+    background-color: #df247c; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.menu-logo img {
+    height: 80px; /* Larger logo size */
+    transition: transform 0.2s ease;
+}
+
+.menu-logo:hover img {
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Search Section */
+.menu-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ff6b6b; /* Pink border */
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+.search-input::placeholder {
+    color: #aaa; /* Placeholder color */
+}
+
+.search-input:focus {
+    border-color: #ff6b6b; /* Darker pink border on focus */
+    background-color: #ffffff; /* White background on focus */
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #ff6b6b; /* Pink color */
+}
+
+/* Profile and Cart Section */
+.menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile Dropdown */
+.nav-profile {
+    position: relative;
+}
+
+.profile-icon {
+    font-size: 24px;
+    color: white; 
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 26px;
+    right: -80px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    width: 200px;
+    z-index: 999;
+    text-decoration: none;
+}
+.profile-dropdown a{
+    text-decoration: none;
+    color: black;
+}
+
+.profile-dropdown li {
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.profile-dropdown li:hover {
+    background-color: rgb(245, 135, 179); /* Light pink on hover */
+}
+
+.nav-profile:hover .profile-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Phone Icon */
+.menu-phone {
+    font-size: 24px;
+    color: white; /* Pink color */
+    text-decoration: none;
+}
+
+/* Cart Section */
+.menu-cart {
+    position: relative;
+}
+
+.menu-cart a {
+    color: white; /* Pink color */
+    font-size: 24px;
+    position: relative;
+}
+
+#count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: black; /* Pink background */
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+/* Hover Effects */
+.menu-icons i:hover {
+    color: #ff3333; /* Darker pink on hover */
+}
+/* ----------------------------------------------------------------------------------- */
+
+/*layer2 */
+.navbar {
+    background-color: #ffffff; /* White background for the navbar */
+    padding: 10px 20px; /* Padding around the navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-menu {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Flexbox for horizontal layout */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+.navbar-menu li {
+    position: relative; /* Needed for dropdown positioning */
+    margin-right: 30px; /* Space between menu items */
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+.navbar-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark grey for text */
+    font-weight: 600; /* Semi-bold font */
+    padding: 8px 15px; /* Padding around links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navbar-menu a:hover {
+    color: #e63946; /* Pink color on hover */
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; /* Hide dropdowns by default */
+    position: absolute; /* Positioning */
+    top: 100%; /* Align below the parent */
+    left: 0; /* Align to the left */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    list-style: none; /* Remove default list styling */
+    padding: 10px 0; /* Padding for dropdown */
+    z-index: 999; /* Ensure it appears on top */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu li {
+    padding: 8px 15px; /* Padding for dropdown items */
+}
+
+.dropdown-menu li a {
+    color: #333; /* Darker color for dropdown items */
+    font-size: 14px; /* Font size for dropdown items */
+    transition: background 0.3s ease; /* Transition for background color */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1; /* Light grey background on hover */
+}
+
+/* Delivery Section Styles */
+.navbar-deliveries {
+    background-color: #ffffff; /* White background */
+    padding: 10px 40px; /* Padding around delivery section */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
+    border-top: 1px solid #ddd; /* Top border to separate */
+}
+
+.delivery-content {
+    display: flex; /* Flexbox for delivery content */
+    align-items: center; /* Center items vertically */
+}
+
+.delivery-content i {
+    font-size: 20px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #e63946; /* Classy pink for icon */
+}
+
+.country-flags {
+    display: flex; /* Flexbox for flag icons */
+    align-items: center; /* Center flags vertically */
+    margin-left: 20px; /* Space before flags */
+}
+
+.country-flags img {
+    margin-left: 5px; /* Space between flags */
+    border-radius: 3px; /* Slightly rounded corners for flags */
+}

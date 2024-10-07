@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+    <style>
+
+.cart-page {
+    display: flex; /* Flexbox layout for container */
+    justify-content: space-between; /* Space between items */
+    padding: 20px; /* Inner padding */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.container1-items, .container2-amount {
+    background-color: #ffffff; /* White background for clarity */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    margin: 10px; /* Space between containers */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for containers */
+    flex: 1; /* Flex-grow to allow items to stretch */
+}
+
+.pincode {
+    display: flex; /* Flex layout for the address section */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Align vertically */
+    margin-bottom: 15px; /* Space below the pincode section */
+}
+
+.pincode p {
+    font-size: 18px; /* Font size for text */
+    color: #333; /* Dark text for readability */
+}
+
+.pincode button {
+    background-color: #F70C9B; /* Theme color */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Comfortable padding */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.pincode button:hover {
+    background-color: #e60b82; /* Darker shade on hover */
+}
+
+.items-list {
+    border-top: 1px solid #e1e1e1; /* Top border for separation */
+    padding-top: 15px; /* Space above items list */
+}
+
+.items {
+    display: flex; /* Flex layout for items */
+    align-items: center; /* Align vertically */
+    padding: 10px 0; /* Space above and below items */
+    border-bottom: 1px solid #e1e1e1; /* Bottom border for separation */
+}
+
+.items:last-child {
+    border-bottom: none; /* Remove bottom border for the last item */
+}
+
+.items-img img {
+    width: 100px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.items-details p {
+    margin: 5px 0; /* Space above and below paragraphs */
+    color: #555; /* Slightly lighter text color */
+}
+
+#c1-details-text1 {
+    font-weight: bold; /* Bold for product name */
+    font-size: 18px; /* Font size for product name */
+}
+
+#c1-details-text2 {
+    font-size: 14px; /* Font size for delivery details */
+}
+
+#c1-details-text3 {
+    font-size: 16px; /* Font size for price */
+    color: #F70C9B; /* Theme color for price */
+}
+
+button {
+    background-color: pin; /* Default button background */
+    color: #333; /* Dark text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Comfortable padding */
+    cursor: pointer; /* Pointer cursor for buttons */
+    margin: 5px; /* Space around buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #d0d0d0; /* Darker shade on hover */
+}
+
+.place-order {
+    display: flex; /* Flex layout for place order */
+    justify-content: center; /* Center the button */
+    margin-top: 20px; /* Space above place order button */
+}
+
+.container2-amount {
+    max-width: 300px; /* Limit width for amount details */
+}
+
+.container2-amount h3 {
+    font-size: 20px; /* Larger font for price detail title */
+    color: #F70C9B; /* Theme color */
+    margin-bottom: 15px; /* Space below title */
+}
+
+.c2-items, .c2-discount, .c2-delivery-charges, .c2-total-amount {
+    display: flex; /* Flex layout for details */
+    justify-content: space-between; /* Space between text and values */
+    margin: 10px 0; /* Space above and below each detail */
+}
+
+#c2-text {
+    text-align: center; /* Center the savings text */
+    font-weight: bold; /* Bold for emphasis */
+    margin-top: 20px; /* Space above savings text */
+    color: #4CAF50; /* Green color for savings */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="top-menu">
+            <div class="container">
+                <!-- Logo Section -->
+                <div class="menu-logo">
+                    <a href="home.html">
+                        <img src="images/logo.png" alt="Company Logo">
+                    </a>
+                </div>
+    
+                <!-- Search Section -->
+                <div class="menu-search">
+                    <input type="text" class="search-input" placeholder="Search flowers">
+                    <button type="submit" class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+    
+                <!-- Profile and Cart Section -->
+                <div class="menu-icons">
+                    <!-- Profile Dropdown -->
+                    <div class="nav-profile dropdown">
+                        <i class="fa-solid fa-user profile-icon"></i>
+                        <ul class="profile-dropdown">
+                            <li><a href="signup.html">New Customer? Sign Up</a></li>
+                            <li><a href="signin.html">Login</a></li>
+                            <li><a href="orders.html">Orders</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact -->
+                    <a href="contact.html" class="menu-phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+    
+                    <!-- Cart Section -->
+                    <div class="menu-cart">
+                        <a href="cart.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Main Navigation -->
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li class="dropdown">
+                    <a href="#">Occasions <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product.html">Birthday</a></li>
+                        <li><a href="product.html">Anniversary</a></li>
+                        <li><a href="product.html">Get Well Soon</a></li>
+                        <!-- Add the rest of your categories similarly -->
+                    </ul>
+                </li>
+                <!-- Continue adding other categories similarly -->
+            </ul>
+        </nav>
+    
+        <!-- Delivery Section -->
+        <div class="navbar-deliveries">
+            <div class="delivery-content">
+                <i class="fa-solid fa-bars"></i>
+                <span>For Deliveries in <i class="fa-solid fa-location-dot"></i>:</span>
+                <div class="country-flags">
+                    <img src="images/country/canada.jpg" alt="Canada" width="50px" height="30px">
+                    <img src="images/country/australia.jpeg" alt="Australia" width="50px" height="30px">
+                </div>
+            </div>
+        </div>
+      </header>
+<!-- flipkart clone -->
+    <main>
+        <div class="cart-page">
+            <div class="container1-items">
+                <div class="pincode">
+                    <p>From Saved Address</p>
+                    <button style="float: right;">Enter Delivery Pincode</button>
+
+                </div>
+                <div class="items-list">
+                    <div class="items">
+                        <div class="items-img">
+                            <img src ="images/flowers/flower9.webp">
+                        </div>
+                        <div class="items-details">
+                            <p id="c1-details-text1">Gleaming Love Orchids Flower Bouquet</p>
+                            <p id="c1-details-text2">Delivery by Thu Apr 4 | <del>₹40</del>    Free</p>
+                            <p id="c1-details-text3"><del>₹1,995</del> ₹1,199</p>
+                            <button id="save">Save For Later</button>
+                            <button id="remove">Remove</button>
+                           
+
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="items-img">
+                            <img src ="images/flowers/flower10.jpg">
+                        </div>
+                        <div class="items-details">
+                            <p id="c1-details-text1">Gleaming Love Orchids Flower Bouquet</p>
+                            <p id="c1-details-text2">Delivery by Thu Apr 4 | <del>₹40</del>    Free</p>
+                            <p id="c1-details-text3"><del>₹1,995</del> ₹1,199</p>
+                            <button id="save">Save For Later</button>
+                            <button id="remove">Remove</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="place-order">
+                    <a href="checkout.html"><button id="place-order">Place Order</button> </a>
+                </div>
+
+            </div>
+            <div class="container2-amount">
+                <h3>Price Detail</h3>
+                <div class="c2-items">
+                    <p id="items-text">Price(1 item)</p> 
+                    <p id="items-amount">₹1,995</p>
+                </div>
+                <div class="c2-discount">
+                    <p id="discount-text">Discount</p>
+                    <p id="discount-amount">₹796</p>
+                </div>
+                <div class="c2-delivery-charges">
+                    <p id="delivery-text">Discount</p>
+                    <p id="charges-text"><del>₹40</del>    Free</p>
+                </div>
+                <div class="c2-total-amount">
+                    <p id="total-text"><b>Total Amount</b></p>
+                    <p id="amount-text"><b>₹1,199</b></p>
+                </div>
+                <p id="c2-text">You will save ₹796 on this order</b></p>
+            </div>
+            
+        </div>
+        
+    </main>
+    <footer>
+        <div class="container7-footer">
+
+            <div class="footer-text">
+                <p>Bloomex delivers Flowers, Gift Baskets and Plants Coast-to-Coast. You can trust us to deliver the best quality product at the best price. We have locations across Canada to ensure that the freshest flowers and the tastiest treats are delivered on time. You can trust us with your most important moments.</p>
+            </div>
+            
+
+            <div class="footer-block">
+                <h3>Get to know us</h3>
+                <ul>
+                    <li><a href="terms.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Connect with us</h3>
+                <ul>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container8-footer">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <div class="copyright">
+                <p>© 2022-2024, Bloomy.com, All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+    
+</body>
+</html>

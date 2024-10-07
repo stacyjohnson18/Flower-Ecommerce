@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* Container 1 - slider */
+.container1-slider {
+    position: relative;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional max width */
+    margin: 20px auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Slider Image */
+.container1-slider img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom spacing */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* container 2 - shop*/
+.container2-shop {
+    padding: 20px; /* Increased padding for better spacing */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Increased margin for better separation */
+}
+
+/* Shop Title and Description */
+#shop-text1, #shop-text2 {
+    color: #F70C9B; /* Pink color for text */
+    margin-bottom: 10px; /* Space below titles */
+}
+
+#shop-text1 {
+    font-size: 28px; /* Larger title font size */
+    font-weight: bold; /* Bold title for emphasis */
+}
+
+#shop-text2 {
+    font-size: 18px; /* Description font size */
+    color: #555; /* Slightly darker gray for description */
+}
+
+/* Shop Section Layout */
+.shop-section {
+    display: grid; /* Grid layout for items */
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around grid */
+}
+
+/* Link Styling */
+.shop-section a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Block Styling */
+.block {
+    background-color: #ffffff; /* White background for blocks */
+    border: 1px solid #eee; /* Light gray border */
+    border-radius: 10px; /* Slightly rounded corners */
+    padding: 10px; /* Padding inside blocks */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.block:hover {
+    transform: translateY(-3px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Image Styling */
+.block img {
+    width: 100%; /* Full width for images */
+    border-radius: 10px; /* Round image corners */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+}
+
+/* Block Description */
+.block p {
+    text-align: center; /* Center text in blocks */
+    font-size: 16px; /* Font size for descriptions */
+    color: #333; /* Dark gray color for text */
+    margin: 10px 0; /* Space above and below text */
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px){
+    .block{
+        padding: 5px;
+    }
+    .shop-section{
+        padding: 10px;
+        gap: 10px;
+    }
+    .container2-shop{
+        padding: 0px;
+    }
+}
+  
+/* ------------------------------------------------------ */
+/* Container 5 - panel */
+.panel-fb{
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr); /* Five equal columns */
+    padding: 5px 30px; /* Increased padding for spacing */
+    gap: 30px; /* Space between items */
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 12px; /* Rounded corners for a softer appearance */
+    margin-bottom: 20px;
+}
+
+/* Panel Overlay */
+.panel-overlay {
+    display: flex; /* Flexbox for center alignment */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center align items */
+    justify-content: flex-start; /* Align items at the top */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    padding: 15px; /* Padding inside overlay */
+    background-color: rgba(253, 218, 223, 0.653); /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Panel Image Styling */
+.panel-overlay img {
+    border-radius: 50%; /* Circular images */
+    height: 150px; /* Fixed height */
+    width: 150px; /* Fixed width */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth image scaling */
+}
+
+/* Panel Text Styling */
+.panel-overlay p {
+    color: #d70e8a; /* Text color */
+    margin-top: 10px; /* Space above text */
+    font-size: 16px; /* Font size */
+    font-weight: 500; /* Medium weight for better readability */
+}
+
+/* Title Text */
+#text3, #text4 {
+    padding: 20px; /* Padding around titles */
+    color: #F70C9B; /* Pink color */
+    text-align: center; /* Centered titles */
+    font-size: 28px; /* Increased font size for prominence */
+    font-weight: bold; /* Bold title for emphasis */
+}
+
+/* Hover Effects for Panel Overlay */
+.panel-overlay:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+
+
+@media screen and (max-width: 600px) {
+    /* Your styles here */
+    .panel-fb{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* --------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------------- */
+/* Hue Panel Container */
+.hue-panel {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(8, 1fr); /* Eight columns */
+    padding: 20px 0; /* Padding on top and bottom */
+    gap: 20px; /* Space between items */
+}
+
+/* Hue Overlay */
+.hue-overlay {
+    text-align: center; /* Center text and images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+/* Hue Image Styling */
+.hue-overlay img {
+    border-radius: 50%; /* Circular images */
+    height: 115px; /* Fixed height */
+    width: 115px; /* Fixed width */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hue Text Styling */
+.hue-overlay p {
+    color: #d70e8a; /* Text color */
+    margin-top: 10px; /* Space above text */
+    font-size: 16px; /* Font size */
+}
+
+/* Title Text */
+#text3, #text4 {
+    padding: 5px 20px; /* Reduced padding for better alignment */
+    color: #F70C9B; /* Pink color */
+    text-align: center; /* Center text */
+    font-size: 24px; /* Title font size */
+    font-weight: bold; /* Bold titles */
+}
+
+/* Hover Effects for Hue Overlay */
+.hue-overlay:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+@media screen and (max-width: 600px){
+    .hue-panel{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* ------------------------------------------- */
+/* 4th container - offer */
+.container4-offers{
+    padding: 10px 10px; 
+    margin-bottom: 20px;
+
+}
+@media screen and (max-width: 600px){
+    .container4-offers{
+        width: 100%;
+        /* border: 2px solid red; */
+    
+    }
+    .container4-offers img{
+        width: 100%;
+    
+    }
+}
+/* ------------------------------------------------ */
+
+
+
+/* ------------------------------------------------ */
+/* Container for the Shop */
+.container6-shop {
+    text-align: center;
+    
+    padding: 20px; /* Add padding to the container */
+}
+
+/* Product Block */
+.block6 {
+    padding: 15px; /* Increased padding for better spacing */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and box-shadow */
+    border: 1px solid #e0e0e0; /* Lighter border for a softer look */
+    border-radius: 8px; /* Rounded corners */
+    width: 260px;
+    margin: 15px; /* Slightly increased margin */
+    background-color: #fff; /* White background for blocks */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Use flexbox for better alignment */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    justify-content: center; /* Center items horizontally */
+}
+
+.block6:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Image Styling */
+.block6 img,
+.block6-img img {
+    width: 100%;
+    height: 220px; /* Consistent height for product images */
+    object-fit: cover; /* Cover ensures the image covers the area without distortion */
+    border-radius: 8px 8px 0 0; /* Rounded top corners for images */
+}
+
+/* Description Styling */
+.desc {
+    padding: 10px;
+}
+
+.about {
+    font-size: 14px; /* Slightly increased font size for better readability */
+    color: #555; /* Darker gray for text */
+}
+
+/* Price Styling */
+.price {
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center price horizontally */
+}
+
+.price span {
+    margin-left: 6px;
+    font-size: 14px; /* Slightly increased font size */
+    color: #f70c9b; /* Bright pink color for price */
+    font-weight: bold; /* Bold price */
+}
+
+.price del {
+    margin-right: 10px;
+    font-size: 12px;
+    color: rgb(85, 85, 85);
+}
+
+/* Button Styling */
+.block6 button {
+    background-color: #f70c9b; /* Bright pink */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Added padding for a larger click area */
+    border-radius: 5px; /* Rounded corners for buttons */
+    font-size: 14px; /* Slightly larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.block6 button:hover {
+    background-color: #d50a8a; /* Darker pink on hover */
+}
+
+/* Rating Styling */
+.rating {
+    background-color: #28a745; /* Green background */
+    border-radius: 50%; /* Keep circular shape */
+    color: white;
+    margin: 10px 10px;
+    padding: 5px 10px; /* Added horizontal padding for better appearance */
+    font-size: 12px; /* Adjust font size */
+}
+
+/* Cart Styling */
+.cart {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light gray background */
+    margin-top: 10px;
+    border-radius: 5px; /* Rounded corners for cart */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.shop-section6{
+    display: grid; /* Grid layout for items */
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around grid */
+}
+
+/* Link Styling */
+.shop-section6 a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+
+@media screen and (max-width: 600px) {
+    .shop-section6{
+        grid-template-columns: repeat(2, 1fr); /* Four columns */
+        gap: 0px; /* Space between items */
+        padding: 0px; /* Padding around grid */
+    }
+    .block6{
+        width: 240px;
+        margin: 10px;
+    }
+    
+}
+/* ------------------------------------------- */
+.container7-footer{
+    background-color: #F70C9B;
+    color: white;
+    padding: 30px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-bottom: 1px solid #adadad;
+}
+
+    .footer-text{
+        width: 50%;
+        padding: 10px;
+    }
+
+    .footer-block{
+        text-align: left;
+    }
+
+    .footer-block ul li{
+        list-style: none;
+        text-transform: capitalize;
+        line-height: 26px;
+        
+    }
+    .footer-block h3{
+        font-size: 17px;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 10px;
+    }
+    .footer-block a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .footer-block a:hover{
+        text-decoration: underline;
+    }
+
+    /* ------------------------------------------- */
+
+    .logo{
+        background-color: #F70C9B;
+        text-align: center;
+    }
+    .logo img{
+        height: 60px;
+    }
+    .copyright{
+        background-color: #c1107d;
+        height: 40px;
+        padding: 10px;
+    }
+    .copyright p{
+        color: white;
+        font-size: 13px;
+        /* justify-content: center; */
+        text-align: center;
+    }
+
+/* -------------------------------------------------- */

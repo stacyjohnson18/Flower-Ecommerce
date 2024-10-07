@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+    <style>
+ 
+
+    .product {
+        background-color: #fff; /* White background for product section */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        display: flex;
+        gap: 20px; /* Increased gap between images and details */
+        padding: 20px; /* More padding for spacing */
+        max-width: 1200px; /* Limit max width for better layout */
+        margin: auto; /* Center the product section */
+    }
+
+    .product-image {
+        width: 50%;
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+    }
+
+
+    .main-image {
+        height: 800px;
+        border-radius: 5px; /* Rounded corners */
+        overflow: hidden; /* Hide overflow */
+    }
+
+    .main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the area without distortion */
+    }
+    .product-details {
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Spacing inside the container */
+    max-width: 500px; /* Limit the width for better readability */
+    
+}
+
+.product-details h2 {
+    font-size: 24px; /* Larger font for the product name */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #F70C9B; /* Classy pink color matching your theme */
+}
+
+.rating-container {
+    display: flex; /* Use flexbox for star layout */
+    align-items: center; /* Center the stars vertically */
+    margin-bottom: 10px; /* Space below the rating */
+}
+
+.rating {
+    margin-left: 10px; /* Space between stars and rating */
+    font-size: 16px; /* Slightly larger font for emphasis */
+    color: #777; /* Subtle color for the rating text */
+}
+
+.prices {
+    font-size: 20px; /* Larger font for the price */
+    font-weight: bold; /* Bold text for emphasis */
+    margin: 10px 0; /* Space above and below the price */
+    color: #F70C9B; /* Use your theme color for price */
+}
+
+.prices del {
+    font-size: 16px; /* Size for the crossed-out price */
+    margin-left: 10px; /* Space between prices */
+    color: grey; /* Grey color for the original price */
+}
+
+#taxes {
+    font-size: 14px; /* Smaller font for taxes info */
+    color: #666; /* Darker grey for contrast */
+    margin-bottom: 15px; /* Space below the taxes */
+}
+
+.button-container {
+    display: flex; /* Use flexbox for button layout */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below button container */
+}
+
+button {
+    font-size: 14px; /* Standard font size for buttons */
+    padding: 10px 15px; /* Comfortable padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+#cart {
+    background-color: #F70C9B; /* Your theme color */
+    color: white; /* White text for contrast */
+}
+
+#buy {
+    background-color: orange; /* Distinctive color for the Buy button */
+    color: white; /* White text for contrast */
+}
+
+#cart:hover {
+    background-color: #e60b82; /* Darker shade on hover */
+}
+
+#buy:hover {
+    background-color: #ff9500; /* Darker shade on hover */
+}
+
+#description {
+    margin-top: 20px; /* Space above the description */
+    margin-bottom: 10px; /* Space below the description */
+}
+
+.description {
+    font-size: 14px; /* Standard font size for description */
+}
+
+.description h4 {
+    font-weight: bold; /* Bold for section titles */
+    margin-top: 10px; /* Space above section titles */
+    color: #333; /* Dark color for readability */
+}
+
+.description ul {
+    list-style-type: disc; /* Disc style for lists */
+    padding-left: 20px; /* Indent the list */
+}
+
+.description li {
+    margin-bottom: 5px; /* Space between list items */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+
+.suggestion {
+    background-color: #ffffff; /* White background for clarity */
+    border: 1px solid #e1e1e1; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    padding: 20px; /* Inner padding for breathing space */
+    margin: 20px 0; /* Space around the section */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.suggestion h3 {
+    font-size: 24px; /* Larger font size for the title */
+    color: #F70C9B; /* Your theme color */
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center; /* Centered title */
+}
+
+.suggestion-option {
+    display: grid; /* Grid layout for suggestions */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive columns */
+    gap: 15px; /* Space between items */
+}
+
+.suggestion-block {
+    background-color: #fafafa; /* Light background for each suggestion */
+    border: 1px solid #ddd; /* Slight border for definition */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Internal padding */
+    text-align: center; /* Centered text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    position: relative; /* Position relative for pseudo-elements */
+}
+
+.suggestion-block:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.suggestion-img img {
+    width: 100%; /* Full width images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.suggestion-block p {
+    font-size: 16px; /* Standard font size for text */
+    color: #333; /* Dark text for readability */
+    margin: 5px 0; /* Space above and below each paragraph */
+}
+
+.suggestion-block .price {
+    font-size: 18px; /* Slightly larger font for price */
+    font-weight: bold; /* Bold price for emphasis */
+    color: #F70C9B; /* Theme color for price */
+    margin-bottom: 10px; /* Space below the price */
+}
+
+.suggestion button {
+    background-color: #F70C9B; /* Theme color */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Comfortable padding */
+    font-size: 14px; /* Standard font size for buttons */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.suggestion button:hover {
+    background-color: #e60b82; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+   
+</style>
+
+       
+         
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="top-menu">
+            <div class="container">
+                <!-- Logo Section -->
+                <div class="menu-logo">
+                    <a href="home.html">
+                        <img src="images/logo.png" alt="Company Logo">
+                    </a>
+                </div>
+    
+                <!-- Search Section -->
+                <div class="menu-search">
+                    <input type="text" class="search-input" placeholder="Search flowers">
+                    <button type="submit" class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+    
+                <!-- Profile and Cart Section -->
+                <div class="menu-icons">
+                    <!-- Profile Dropdown -->
+                    <div class="nav-profile dropdown">
+                        <i class="fa-solid fa-user profile-icon"></i>
+                        <ul class="profile-dropdown">
+                            <li><a href="signup.html">New Customer? Sign Up</a></li>
+                            <li><a href="signin.html">Login</a></li>
+                            <li><a href="orders.html">Orders</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact -->
+                    <a href="contact.html" class="menu-phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+    
+                    <!-- Cart Section -->
+                    <div class="menu-cart">
+                        <a href="cart.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Main Navigation -->
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li class="dropdown">
+                    <a href="#">Occasions <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product.html">Birthday</a></li>
+                        <li><a href="product.html">Anniversary</a></li>
+                        <li><a href="product.html">Get Well Soon</a></li>
+                        <!-- Add the rest of your categories similarly -->
+                    </ul>
+                </li>
+                <!-- Continue adding other categories similarly -->
+            </ul>
+        </nav>
+    
+        <!-- Delivery Section -->
+        <div class="navbar-deliveries">
+            <div class="delivery-content">
+                <i class="fa-solid fa-bars"></i>
+                <span>For Deliveries in <i class="fa-solid fa-location-dot"></i>:</span>
+                <div class="country-flags">
+                    <img src="images/country/canada.jpg" alt="Canada" width="50px" height="30px">
+                    <img src="images/country/australia.jpeg" alt="Australia" width="50px" height="30px">
+                </div>
+            </div>
+        </div>
+      </header>
+
+    <div class="product">
+
+        <div class="product-image">
+            <div class="main-image" >
+                <img src="images/flowers/flower18.jpg">
+            </div>
+        </div>
+        <div class="product-details">
+            <h2>Gleaming Love Orchids Flower Bouquet</h2>
+            
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating">4.8 </span>
+
+            <p class="prices">₹1299 <del>₹2000</del></p>
+            <p id="taxes" >Inclusive of all taxes</p>
+            <button id="cart">Add to Cart</button>
+            <a href="cart.html"><button id="buy">Buy now</button></a>
+
+            <h3 id="description">Description</h3>
+            <div class="description">
+                <h4>Product Details:</h4>
+                <ul>
+                    <li>10 Blue Orchids</li>
+                    <li>Green Murraya Leaf Filler</li>
+                    <li>One Non-Woven Blue Paper</li>
+                    <li>Net Quantity: 1 Bouquet</li>
+                    <li>Dimensions: 12x10 inch</li>
+                    <li>Weight: Approx 1-1.5 kgs</li>
+                </ul><br>
+                <h4>Delivery instructions:</h4>
+                <ul>
+                    <li>The image displayed is indicative in nature.</li>
+                    <li>Actual product may vary in shape or design as per the availability.</li>
+                    <li>Flowers may be delivered in fully bloomed, semi-bloomed or bud stage.</li>
+                    <li>The delivery cannot be redirected to any other address.</li>
+                    <li>Since flowers are perishable in nature, we will be able to attempt delivery of your order only once.</li>
+                    <li>The chosen delivery time is an estimate and depends on the availability of the product and the destination to which you want the product to be delivered.</li>
+                </ul>
+            </div>
+        </div>      
+    </div>
+
+    <div class="suggestion">
+        <h3>You May Also Like</h3>
+        <div class="suggestion-option">
+            <div class="suggestion-block">
+                <div class="suggestion-img">
+                    <img src="images/flowers/flower13.webp">
+                </div>
+                <p>Blushing Beauty Rose Standing Bouquet</p>
+                <p>₹ 899</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="suggestion-block">
+                <div class="suggestion-img">
+                    <img src="images/flowers/flower12.webp">
+                </div>
+                <p>Blushing Beauty Rose Standing Bouquet</p>
+                <p>₹ 899</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container7-footer">
+
+            <div class="footer-text">
+                <p>Bloomex delivers Flowers, Gift Baskets and Plants Coast-to-Coast. You can trust us to deliver the best quality product at the best price. We have locations across Canada to ensure that the freshest flowers and the tastiest treats are delivered on time. You can trust us with your most important moments.</p>
+            </div>
+            
+
+            <div class="footer-block">
+                <h3>Get to know us</h3>
+                <ul>
+                    <li><a href="terms.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Connect with us</h3>
+                <ul>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container8-footer">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <div class="copyright">
+                <p>© 2022-2024, Bloomy.com, All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>

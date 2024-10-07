@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/home.css">
+    <style>
+       
+/* Signup Section */
+.signup {
+    background-color: white; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 40px; /* Space inside the form */
+    width: 400px; /* Fixed width for form */
+    max-width: 100%; /* Responsive width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Signup Title */
+#text-signup {
+    font-size: 28px; /* Larger font size for title */
+    font-weight: bold; /* Bold text */
+    color: #f70c9b; /* Pinkish color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Signup Link */
+#text-link {
+    text-align: center; /* Center the link */
+    font-size: 14px; /* Smaller font size */
+    margin-bottom: 30px; /* Space between link and form */
+}
+
+#text-link a {
+    color: #f70c9b; /* Pinkish color for the link */
+    text-decoration: none; /* Remove underline */
+}
+
+#text-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input fields */
+}
+
+/* Input Fields Styling */
+.username, .password {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+}
+
+.username p, .password p {
+    font-size: 14px; /* Label font size */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #555; /* Softer label color */
+}
+
+.username input, .password input {
+    padding: 10px; /* Padding inside input */
+    font-size: 16px; /* Input text size */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 6px; /* Rounded input fields */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.username input:focus, .password input:focus {
+    border-color: #f70c9b; /* Pink border on focus */
+}
+
+/* Submit Button Styling */
+.submit {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+}
+
+.submit button {
+    background-color: #f70c9b; /* Pinkish button background */
+    color: white; /* White text color */
+    font-size: 16px; /* Button text size */
+    padding: 12px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 6px; /* Rounded button */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.submit button:hover {
+    background-color: #d00c7f; /* Darker pink on hover */
+}
+
+.submit a {
+    text-decoration: none; /* Remove underline from the link around the button */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .signup {
+        padding: 30px 20px; /* Reduce padding on smaller screens */
+    }
+
+    .submit button {
+        width: 100%; /* Full width button on small screens */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="top-menu">
+            <div class="container">
+                <!-- Logo Section -->
+                <div class="menu-logo">
+                    <a href="home.html">
+                        <img src="images/logo.png" alt="Company Logo">
+                    </a>
+                </div>
+    
+                <!-- Search Section -->
+                <div class="menu-search">
+                    <input type="text" class="search-input" placeholder="Search flowers">
+                    <button type="submit" class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+    
+                <!-- Profile and Cart Section -->
+                <div class="menu-icons">
+                    <!-- Profile Dropdown -->
+                    <div class="nav-profile dropdown">
+                        <i class="fa-solid fa-user profile-icon"></i>
+                        <ul class="profile-dropdown">
+                            <li><a href="signup.html">New Customer? Sign Up</a></li>
+                            <li><a href="signin.html">Login</a></li>
+                            <li><a href="orders.html">Orders</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact -->
+                    <a href="contact.html" class="menu-phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+    
+                    <!-- Cart Section -->
+                    <div class="menu-cart">
+                        <a href="cart.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Main Navigation -->
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li class="dropdown">
+                    <a href="#">Occasions <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product.html">Birthday</a></li>
+                        <li><a href="product.html">Anniversary</a></li>
+                        <li><a href="product.html">Get Well Soon</a></li>
+                        <!-- Add the rest of your categories similarly -->
+                    </ul>
+                </li>
+                <!-- Continue adding other categories similarly -->
+            </ul>
+        </nav>
+    
+        <!-- Delivery Section -->
+        <div class="navbar-deliveries">
+            <div class="delivery-content">
+                <i class="fa-solid fa-bars"></i>
+                <span>For Deliveries in <i class="fa-solid fa-location-dot"></i>:</span>
+                <div class="country-flags">
+                    <img src="images/country/canada.jpg" alt="Canada" width="50px" height="30px">
+                    <img src="images/country/australia.jpeg" alt="Australia" width="50px" height="30px">
+                </div>
+            </div>
+        </div>
+      </header>
+
+    <main>
+        <div class="signup">
+            
+            <h2 id="text-signup">Sign up</h2>
+            <p id="text-link">Already have an account? <a href="signin.html">Sign In</a></p>
+            
+    
+            <div class="form">    
+                    <div class="username"><p>Full Name: </p><input type="text" placeholder="Full Name"></div>
+                    <div class="username"><p>Email-ID: </p><input type="text" placeholder="Email-ID"></div>
+                    <!-- <div class="password"><p>Number: </p><input type="password" placeholder="Phone-No."></div> -->
+                    <div class="username"><p>Username: </p><input type="text" placeholder="username"></div>
+                    <div class="password"><p>Password: </p><input type="password" placeholder="password"></div>
+                    <div class="password"><p>Password: </p><input type="password" placeholder="Confirm password"></div>
+                    <div class="submit">
+                    <a href="index.html"><button>SIGN IN</button></a>
+            
+            </div>
+
+        </div>
+        
+    </main>
+    <footer>
+        <div class="container7-footer">
+
+            <div class="footer-text">
+                <p>Bloomex delivers Flowers, Gift Baskets and Plants Coast-to-Coast. You can trust us to deliver the best quality product at the best price. We have locations across Canada to ensure that the freshest flowers and the tastiest treats are delivered on time. You can trust us with your most important moments.</p>
+            </div>
+            
+
+            <div class="footer-block">
+                <h3>Get to know us</h3>
+                <ul>
+                    <li><a href="terms.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Connect with us</h3>
+                <ul>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container8-footer">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <div class="copyright">
+                <p>© 2022-2024, Bloomy.com, All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
