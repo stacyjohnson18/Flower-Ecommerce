@@ -22,7 +22,3 @@ The entire design of this website is crafted by me, focusing on creating a visua
 - HTML
 - CSS
 
-## Demo
-
-You can view the live demo of the project [here](link-to-your-live-demo).
-
